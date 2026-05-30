@@ -1,8 +1,8 @@
 # 🧬 w_krainie_genetyki
 
-> Jedno miejsce na polską genetykę — aktualności, grupy badawcze, konferencje i kursy.
+> Jedno miejsce na polską genetykę — aktualności, konferencje, szkolenia, webinary i wydarzenia.
 
-Strona społecznościowa dla polskiej społeczności genetycznej. Hostowana na GitHub Pages.
+Strona przeznaczona dla wszystkich pracujących w genetyce (głównie człowieka). Stworzona przez diagnostę-genetyka dla genetyków. Hostowana na GitHub Pages.
 
 **→ [w_krainie_genetyki.github.io](https://w-krainie-genetyki.github.io)**
 
@@ -12,23 +12,15 @@ Strona społecznościowa dla polskiej społeczności genetycznej. Hostowana na G
 
 | Sekcja | Opis |
 |---|---|
-| **Aktualności** | Publikacje, nagrody, granty, ważne ogłoszenia |
-| **Grupy badawcze** | Laboratoria i ośrodki genetyki w Polsce |
-| **Konferencje** | Sympozja, meetupy, kongresy z datami i linkami |
+| **Aktualności** | Publikacje, nowinki, ogłoszenia |
+| **Konferencje** | Konferencje i spotkania |
 | **Kursy** | Szkolenia, webinary, kursy online i stacjonarne |
 
 ---
 
-## Jak zgłosić wpis?
+## Formularz zgłoszeniowy
 
-Użyj formularza na stronie: **[Zgłoś wpis →](submit.html)**
-
-Możesz zgłaszać:
-- konferencje i sympozja
-- meetupy i spotkania tematyczne
-- kursy, szkolenia, webinary
-- nowe projekty lub grupy badawcze
-- ważne publikacje i granty
+Formularz zgłoszeniowy jest tymczasowo wyłączony. Wersja strony do dalszego rozwoju w tym repo może zostać opublikowana później.
 
 Wpisy są weryfikowane i publikowane bezpłatnie.
 
@@ -39,10 +31,8 @@ Wpisy są weryfikowane i publikowane bezpłatnie.
 ```
 /
 ├── index.html          # Strona główna
-├── submit.html         # Formularz zgłoszenia wpisu
 ├── privacy.html        # Polityka prywatności
 ├── aktualnosci.html    # Archiwum aktualności (do rozbudowy)
-├── grupy.html          # Pełna lista grup badawczych (do rozbudowy)
 ├── konferencje.html    # Pełna lista konferencji (do rozbudowy)
 ├── kursy.html          # Pełna lista kursów (do rozbudowy)
 └── README.md
@@ -74,17 +64,14 @@ python3 -m http.server 8080
 
 ### Formularz zgłoszeniowy
 
-Strona korzysta z [Formspree](https://formspree.io) do obsługi formularza. Aby go aktywować:
-1. Załóż konto na formspree.io
-2. Utwórz nowy formularz i skopiuj ID
-3. W pliku `submit.html` zamień `YOUR_FORM_ID` na swoje ID Formspree
+Formularz zgłoszeniowy jest tymczasowo wyłączony i nie pojawia się już w serwisie. Repozytorium można dalej rozwijać lokalnie, a publikację wznowić później.
 
 ---
 
 ## Chcesz pomóc?
 
 Pull requesty mile widziane! Możesz:
-- dodawać wpisy przez edycję HTML (lub zgłaszać przez formularz)
+- dodawać wpisy przez edycję HTML
 - zgłaszać błędy w zakładce **Issues**
 - proponować nowe sekcje lub funkcjonalności
 
