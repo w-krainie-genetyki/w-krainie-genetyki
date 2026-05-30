@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zgłoś wpis — w_krainie_genetyki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dna: #1a3a2a; --dna-mid: #2d6b4a; --dna-light: #5ca07a;
+      --dna-pale: #c8e6d6; --dna-faint: #f0f8f3;
+      --amber: #c87941; --amber-light: #f5e5d0;
+      --ink: #1a1a1a; --ink-mid: #4a4a4a; --ink-soft: #888;
+      --rule: #e0e0e0; --surface: #f8f7f4; --white: #ffffff;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--ink); }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--rule);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 60px;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.05rem;
+      letter-spacing: -0.02em; color: var(--dna); text-decoration: none;
+    }
+    .nav-back {
+      font-size: 0.85rem; color: var(--ink-mid); text-decoration: none;
+      font-weight: 500;
+    }
+    .nav-back:hover { color: var(--dna); }
+
+    .page-wrap {
+      max-width: 680px; margin: 0 auto; padding: 4rem 2rem 6rem;
+    }
+    .page-eyebrow {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--dna-light); margin-bottom: 1rem;
+    }
+    .page-title {
+      font-family: 'DM Serif Display', serif; font-size: 2.2rem;
+      color: var(--ink); margin-bottom: 0.75rem; line-height: 1.15;
+    }
+    .page-sub {
+      color: var(--ink-mid); font-size: 0.95rem; margin-bottom: 3rem;
+      line-height: 1.7;
+    }
+
+    .form-group { margin-bottom: 1.75rem; }
+    label {
+      display: block; font-size: 0.85rem; font-weight: 500;
+      color: var(--ink); margin-bottom: 0.5rem;
+    }
+    label .req { color: var(--dna-light); margin-left: 2px; }
+    label .hint {
+      font-weight: 400; color: var(--ink-soft); font-size: 0.8rem;
+      margin-left: 0.5rem;
+    }
+
+    input[type="text"], input[type="email"], input[type="url"],
+    input[type="date"], select, textarea {
+      width: 100%; padding: 0.65rem 0.9rem;
+      border: 1px solid var(--rule); border-radius: 2px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
+      color: var(--ink); background: var(--white);
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none; border-color: var(--dna-light);
+    }
+    textarea { min-height: 120px; resize: vertical; line-height: 1.6; }
+    select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.9rem center; padding-right: 2.5rem; }
+
+    .form-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+
+    .submit-btn {
+      background: var(--dna); color: var(--white); border: none;
+      padding: 0.8rem 2rem; font-size: 0.95rem; font-weight: 500;
+      font-family: 'DM Sans', sans-serif; border-radius: 2px;
+      cursor: pointer; transition: background 0.2s; letter-spacing: 0.01em;
+    }
+    .submit-btn:hover { background: var(--dna-mid); }
+
+    .privacy-note {
+      font-size: 0.78rem; color: var(--ink-soft); margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .info-box {
+      background: var(--dna-faint); border: 1px solid var(--dna-pale);
+      border-radius: 2px; padding: 1.25rem; margin-bottom: 2.5rem;
+      font-size: 0.88rem; color: var(--ink-mid); line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      nav { padding: 0 1.25rem; }
+      .page-wrap { padding: 2.5rem 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">w_krainie_genetyki</a>
+  <a href="index.html" class="nav-back">← Powrót do strony głównej</a>
+</nav>
+
+<div class="page-wrap">
+  <p class="page-eyebrow">Społeczność</p>
+  <h1 class="page-title">Zgłoś wpis</h1>
+  <p class="page-sub">
+    Organizujesz wydarzenie, prowadzisz kurs, otworzyłeś nową grupę badawczą lub chcesz podzielić się publikacją? Wypełnij formularz — opublikujemy wpis bezpłatnie.
+  </p>
+
+  <div class="info-box">
+    Wpisy są weryfikowane ręcznie i zwykle pojawiają się na stronie w ciągu 2–3 dni roboczych. Zastrzegamy sobie prawo do edycji treści w celu zachowania spójności serwisu.
+  </div>
+
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+    <div class="form-group">
+      <label>Rodzaj wpisu <span class="req">*</span></label>
+      <select name="typ" required>
+        <option value="" disabled selected>Wybierz kategorię</option>
+        <option value="aktualnosc">Aktualność / publikacja</option>
+        <option value="konferencja">Konferencja / sympozjum</option>
+        <option value="meetup">Meetup / spotkanie</option>
+        <option value="kurs">Kurs / szkolenie / webinar</option>
+        <option value="grupa">Grupa badawcza / projekt</option>
+        <option value="inne">Inne</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Tytuł wpisu <span class="req">*</span></label>
+      <input type="text" name="tytul" placeholder="np. IX Sympozjum Genomiki Klinicznej" required />
+    </div>
+
+    <div class="form-group">
+      <label>Opis <span class="req">*</span> <span class="hint">maks. 300 znaków</span></label>
+      <textarea name="opis" maxlength="300" placeholder="Krótki opis — co, gdzie, dla kogo..." required></textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Data (od) <span class="hint">jeśli dotyczy</span></label>
+        <input type="date" name="data_od" />
+      </div>
+      <div class="form-group">
+        <label>Data (do) <span class="hint">jeśli dotyczy</span></label>
+        <input type="date" name="data_do" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Miejsce / forma</label>
+        <input type="text" name="miejsce" placeholder="np. Warszawa lub Online" />
+      </div>
+      <div class="form-group">
+        <label>Organizator / instytucja</label>
+        <input type="text" name="organizator" placeholder="np. Politechnika Gdańska" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Link (URL) <span class="hint">strona wydarzenia lub publikacji</span></label>
+      <input type="url" name="url" placeholder="https://" />
+    </div>
+
+    <div class="form-group">
+      <label>Twój e-mail <span class="req">*</span> <span class="hint">nie będzie opublikowany</span></label>
+      <input type="email" name="email" placeholder="imie@instytucja.pl" required />
+    </div>
+
+    <button type="submit" class="submit-btn">Wyślij zgłoszenie →</button>
+    <p class="privacy-note">
+      Wysyłając formularz, wyrażasz zgodę na przetwarzanie podanych danych kontaktowych wyłącznie w celu publikacji wpisu. Szczegóły w <a href="privacy.html" style="color:var(--dna-mid)">polityce prywatności</a>.
+    </p>
+
+  </form>
+</div>
+
+</body>
+</html>
