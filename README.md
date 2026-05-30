@@ -70,7 +70,7 @@ python3 -m http.server 8080
 3. W ustawieniach repozytorium: **Settings → Pages → Source: Deploy from branch → main / (root)**
 4. Strona będzie dostępna pod adresem `https://TWOJ_USERNAME.github.io/w-krainie-genetyki`
 
-> Uwaga: w tym repo działa automatyczne wdrożenie GitHub Pages z workflow `.github/workflows/pages.yml`. Każdy push do `main` odświeży stronę.
+> Uwaga: GitHub Pages jest już włączone dla repozytorium, więc każda zmiana wypchnięta do `main` zbuduje i opublikuje stronę automatycznie.
 
 ### Formularz zgłoszeniowy
 
